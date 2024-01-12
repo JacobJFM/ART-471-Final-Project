@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://dhsbqav54413l"
+path="res://.godot/imported/zorb.aseprite-c6e50aab92ec31ecfdca8427b809b98c.res"
+
+[deps]
+
+source_file="res://assets/utensils/zorb.aseprite"
+dest_files=["res://.godot/imported/zorb.aseprite-c6e50aab92ec31ecfdca8427b809b98c.res"]
+
+[params]
+

@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://b1aw50twqoyvs"]
+
+[ext_resource type="Script" path="res://scenes/utensil.gd" id="1_60dsi"]
+[ext_resource type="Script" path="res://scenes/hover_outline.gd" id="3_bwkr7"]
+[ext_resource type="Texture2D" uid="uid://c75p06ifyijeu" path="res://assets/utensils/quantisipper.png" id="3_wmhqg"]
+[ext_resource type="PackedScene" uid="uid://tqu2b3d3yvj7" path="res://scenes/clickable.tscn" id="4_uas1l"]
+
+[node name="Quantisipper" type="Node2D"]
+script = ExtResource("1_60dsi")
+
+[node name="Clickable" parent="." instance=ExtResource("4_uas1l")]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Clickable"]
+polygon = PackedVector2Array(62, 29.2, 62.8, 30, 63.8, 30, 79, 28.8, 79, 31, 84, 35, 84, 37.5, 92, 52.5, 92, 77, 90.9, 77, 89.9, 101, 88.7, 101, 87.6, 106, 85.8, 106, 80.8, 111, 66.9, 111, 42, 107.8, 42, 89, 41.1, 78, 34, 66.6, 34, 61, 32.9, 43, 35.1, 43, 47, 29.3, 47, 27, 62, 27)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("3_wmhqg")
+centered = false
+script = ExtResource("3_bwkr7")
+metadata/_aseprite_wizard_config_ = {
+"i_mode": 1,
+"keep_anim_length": false,
+"layer": "",
+"o_ex_p": "",
+"o_folder": "res://assets",
+"o_name": "",
+"only_visible": false,
+"op_exp": false,
+"player": "",
+"source": "res://assets/quantisipper.aseprite"
+}
+
+[connection signal="got_clicked" from="Clickable" to="." method="_on_clickable_got_clicked"]

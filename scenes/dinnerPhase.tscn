@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://dp75q0nbwt55l"]
+
+[ext_resource type="Texture2D" uid="uid://s411ku63hi2q" path="res://assets/plain-bg.png" id="1_exb28"]
+[ext_resource type="PackedScene" uid="uid://dhwhmsg536kdf" path="res://scenes/utensilManager.tscn" id="1_m0a1d"]
+[ext_resource type="Script" path="res://scenes/dinnerPhase.gd" id="1_qw4nj"]
+[ext_resource type="Script" path="res://scenes/food_manager.gd" id="3_l3dhy"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_qw4nj")
+
+[node name="Background" type="TextureRect" parent="."]
+texture_filter = 1
+offset_right = 320.0
+offset_bottom = 180.0
+texture = ExtResource("1_exb28")
+metadata/_aseprite_wizard_config_ = {
+"i_mode": 1,
+"keep_anim_length": false,
+"layer": "",
+"o_ex_p": "",
+"o_folder": "res://assets",
+"o_name": "",
+"only_visible": false,
+"op_exp": true,
+"player": "",
+"source": "res://assets/plain-bg.aseprite"
+}
+
+[node name="UtensilManager" parent="." instance=ExtResource("1_m0a1d")]
+
+[node name="FoodManager" type="Node2D" parent="."]
+script = ExtResource("3_l3dhy")

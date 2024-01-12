@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://dhwhmsg536kdf"]
+
+[ext_resource type="Script" path="res://scenes/utensilManager.gd" id="1_qxrk2"]
+[ext_resource type="PackedScene" uid="uid://8iis43uq1vlw" path="res://scenes/glooptar.tscn" id="2_1fofm"]
+[ext_resource type="PackedScene" uid="uid://dren8seqljo76" path="res://scenes/zorb.tscn" id="3_t5u3w"]
+[ext_resource type="PackedScene" uid="uid://b1aw50twqoyvs" path="res://scenes/quantisipper.tscn" id="4_hiaa7"]
+
+[node name="UtensilManager" type="Node2D"]
+script = ExtResource("1_qxrk2")
+
+[node name="Glooptar" parent="." instance=ExtResource("2_1fofm")]
+position = Vector2(-29.4868, 54.0983)
+
+[node name="Zorb" parent="." instance=ExtResource("3_t5u3w")]
+position = Vector2(215.769, 3.46375)
+
+[node name="Quantisipper" parent="." instance=ExtResource("4_hiaa7")]
+position = Vector2(17.7488, 57.6637)
+
+[connection signal="was_selected" from="Glooptar" to="." method="_on_glooptar_was_selected"]
+[connection signal="was_unselected" from="Glooptar" to="." method="_on_glooptar_was_unselected"]
+[connection signal="was_selected" from="Zorb" to="." method="_on_zorb_was_selected"]
+[connection signal="was_unselected" from="Zorb" to="." method="_on_zorb_was_unselected"]
+[connection signal="was_selected" from="Quantisipper" to="." method="_on_quantisipper_was_selected"]
+[connection signal="was_unselected" from="Quantisipper" to="." method="_on_quantisipper_was_unselected"]

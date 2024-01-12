@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://5vuhw0ci108q"]
+
+[ext_resource type="PackedScene" uid="uid://tqu2b3d3yvj7" path="res://scenes/clickable.tscn" id="1_m2s7a"]
+[ext_resource type="Script" path="res://scenes/food.gd" id="1_t0tt5"]
+[ext_resource type="Texture2D" uid="uid://b8r6bhv4yrodu" path="res://assets/foods/flarkey.png" id="2_dvs8b"]
+
+[node name="Flarkey" type="Node2D"]
+script = ExtResource("1_t0tt5")
+
+[node name="Clickable" parent="." instance=ExtResource("1_m2s7a")]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Clickable"]
+polygon = PackedVector2Array(78, 16.5, 102, 23.5, 102, 25.1, 116, 40.2, 116, 43, 117.1, 60, 115.4, 60, 108.4, 78, 106.9, 78, 94.9, 92, 91.4, 92, 52.4, 110, 47.2, 110, 12, 113.2, 12, 110.5, 9, 103, 11.1, 103, 14.2, 66, 15.5, 66, 19.5, 51, 21.1, 51, 45.1, 22, 48.3, 22, 53.3, 18, 57.9, 18, 64, 16.5, 64, 15, 78, 15)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_dvs8b")
+centered = false
+metadata/_aseprite_wizard_config_ = {
+"i_mode": 1,
+"keep_anim_length": false,
+"layer": "",
+"o_ex_p": "",
+"o_folder": "res://assets/foods",
+"o_name": "",
+"only_visible": false,
+"op_exp": true,
+"player": "",
+"source": "res://assets/foods/flarkey.aseprite"
+}
+
+[connection signal="got_clicked" from="Clickable" to="." method="_on_clickable_got_clicked"]

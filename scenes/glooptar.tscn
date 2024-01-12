@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://8iis43uq1vlw"]
+
+[ext_resource type="Script" path="res://scenes/utensil.gd" id="1_k3xnk"]
+[ext_resource type="PackedScene" uid="uid://tqu2b3d3yvj7" path="res://scenes/clickable.tscn" id="3_b6oox"]
+[ext_resource type="Texture2D" uid="uid://s8egsbsqxstj" path="res://assets/utensils/glooptar.png" id="3_fghyr"]
+[ext_resource type="Script" path="res://scenes/hover_outline.gd" id="4_rx3i8"]
+
+[node name="Glooptar" type="Node2D"]
+script = ExtResource("1_k3xnk")
+
+[node name="Clickable" parent="." instance=ExtResource("3_b6oox")]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Clickable"]
+polygon = PackedVector2Array(84, 13.1, 84, 15.6, 88, 24.6, 88, 39.3, 81, 42.3, 81, 44.1, 78.8, 64, 76.7, 64, 72, 67.1, 72, 115, 53.1, 115, 51.1, 67, 43.9, 67, 40, 60.6, 40, 48, 39, 25, 40.2, 25, 41.2, 17, 43.2, 17, 46.2, 14, 56.8, 14, 66, 13.2, 66, 11.9)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("3_fghyr")
+centered = false
+script = ExtResource("4_rx3i8")
+metadata/_aseprite_wizard_config_ = {
+"i_mode": 1,
+"keep_anim_length": false,
+"layer": "",
+"o_ex_p": "",
+"o_folder": "res://assets",
+"o_name": "",
+"only_visible": false,
+"op_exp": true,
+"player": "",
+"source": "res://assets/glooptar.aseprite"
+}
+
+[connection signal="got_clicked" from="Clickable" to="." method="_on_clickable_got_clicked"]

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://tqu2b3d3yvj7"]
+
+[ext_resource type="Script" path="res://scenes/clickable.gd" id="1_h2xxu"]
+
+[node name="Clickable" type="StaticBody2D"]
+input_pickable = true
+script = ExtResource("1_h2xxu")

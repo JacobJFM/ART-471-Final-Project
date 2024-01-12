@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://cyu8esc8wi7xq"]
+
+[ext_resource type="Texture2D" uid="uid://dq6q2ndrb6tpf" path="res://assets/titleScreen.png" id="1_lv2p4"]
+
+[node name="Node" type="Node"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+offset_right = 320.0
+offset_bottom = 180.0
+texture = ExtResource("1_lv2p4")
+metadata/_aseprite_wizard_config_ = {
+"i_mode": 1,
+"keep_anim_length": false,
+"layer": "",
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"op_exp": false,
+"player": "",
+"source": "res://assets/titleScreen.aseprite"
+}
