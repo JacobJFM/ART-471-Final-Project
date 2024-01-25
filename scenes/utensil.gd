@@ -13,7 +13,7 @@ signal was_unselected
 ##region warnings
 #func _get_configuration_warnings():
 	#var warning = []
-	#if not sprite: 
+	#if not sprite_2d: 
 		#warning.append("Missing Sprite2D child (Remember to attach hover_outline.gd)")
 	#if not clickable:
 		#warning.append("Utensils are required to have a Clickable child")
@@ -25,13 +25,13 @@ signal was_unselected
 		#var found_clickable = false
 		#for child in get_children():
 			#if child is HoverOutline:
-				#sprite = child
+				#sprite_2d = child
 				#found_sprite = true
 			#elif child.name == "Clickable":
 				#clickable = child
 				#found_clickable = true
 		#if not found_sprite:
-			#sprite = null
+			#sprite_2d = null
 		#if not found_clickable:
 			#clickable = null
 		#update_configuration_warnings()
